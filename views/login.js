@@ -11,6 +11,7 @@ function login(e){
     .then(result=>{
         alert("successfully logged in")
         window.location ="frontend.html"
+        localStorage.setItem('token', result.data.token)
     })
     .catch(err =>{
         console.log(err)

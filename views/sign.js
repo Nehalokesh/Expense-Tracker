@@ -10,6 +10,7 @@ function signup(event){
     .then(result=>{
         alert("successfully sign up")
         window.location = "login.html"
+        console.log(result)
     })
     .catch(err =>{
         console.log(err)

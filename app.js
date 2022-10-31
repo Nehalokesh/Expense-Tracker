@@ -10,6 +10,7 @@ const sequelize = require('./util/database');
 
 const expenseRoutes = require('./routes/expense');
 
+
 const user = require('./models/user');
 
 const expensedata = require('./models/expensedata');
@@ -19,6 +20,9 @@ expense.use(cors());
 expense.use(bodyparser.json());
 
 expense.use(expenseRoutes);
+
+user.hasMany(expensedata);
+expensedata.belongsTo(user);
 
 sequelize
 .sync()

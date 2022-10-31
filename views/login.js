@@ -10,7 +10,7 @@ function login(e){
     axios.post("http://localhost:3000/login",loginDetails)
     .then(result=>{
         alert("successfully logged in")
-        // console.log(result)
+        window.location ="frontend.html"
     })
     .catch(err =>{
         console.log(err)

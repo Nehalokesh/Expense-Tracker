@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXPENSE TRACKER</title>
+    <link rel="stylesheet" href="frontend.css">
+    <script src="frontend.css"></script>
+
+</head>
+<body>
+  <div id="outer">
+  <header><h1> EXPENSE TRACKER </h1></header>
+  <div class="mesg"></div>
+  <h2> Let's Start </h2>
+      <form onsubmit="submitform(event)" id="my-form" >
+    <div id="set">
+         <label> Choose a Expense</label><br>
+         <input type="number" id="typeid" name="typeid" required>
+         <br>
+         <label> Choose a description </label><br>
+         <input list="browsers" name="browserid"  id="browserid" placeholder="select one any" required ><br>
+         <datalist id="browsers" >
+           <option value="Movie">
+           <option value="Fuel">
+           <option value="Bill">
+         </datalist>
+         <br>
+         <label> Choose a category </label><br>
+         <select id="select" name="selectedid" required >
+          <option value="" >select any one</option>
+            <option value="food">FOOD</option>
+            <option value="diesel">Movie</option>
+            <option value="petrol">petrol</option>
+            <option value=" E-bill">electricity bill</option>
+            
+          </select><br><br>
+       <button id="submit" >Add Expense</button>
+        <br>
+        <br>
+      </div>
+      <div>
+       
+      </div>
+</form>
+<ul id ="userlist"> </ul>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+ <script src="frontend.js"></script>
+</head>
+</html>

@@ -55,3 +55,20 @@ button{
 .userlist{
     margin:30px;
 }
+#rzp-button1
+{
+   position: fixed; 
+   bottom: 10px;
+   left: 10px;
+   background: none;
+   font-size: xx-large;
+   color: #4C0033;
+}
+
+#logout{
+    position: fixed;
+    top:20px;
+    right: 50px;
+    background: none;
+    font-size: x-large;
+}

@@ -28,9 +28,10 @@ user.hasMany(orderModels);
 orderModels.belongsTo(user);
 
 sequelize
+// .sync({force:true})
 .sync()
 .then(result =>{
-    expense.listen(3000);
+    expense.listen(4000);
 })
 .catch(err =>{
     console.log(err)

@@ -7,6 +7,8 @@ function generateAccessToken(id)
     return jwt.sign({userId:id},'Nehalokesh')
 }
 
+
+
 function isstringinvalid(string)
 {
     if(string == undefined || string.length === 0)
@@ -18,6 +20,8 @@ function isstringinvalid(string)
        return false
     }
 }
+
+
 exports.signup = async (req,res)=>{
 
 
@@ -45,7 +49,6 @@ exports.signup = async (req,res)=>{
 
 }
 
-
 exports.login= async(req,res)=>{
     try{
         const email = req.body.email;
@@ -68,7 +71,7 @@ exports.login= async(req,res)=>{
             }
             if(result == true)
             {
-                res.status(200).json({success:true , message:"user is successfully logged", token: generateAccessToken(User[0].id)})
+                res.status(200).json({success:true , message:"user is successfully logged" , token: generateAccessToken(User[0].id)})
             }
             else
             {

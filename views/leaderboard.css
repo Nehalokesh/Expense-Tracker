@@ -1,0 +1,53 @@
+body{
+    color: white;
+    background-color: black;
+
+}
+
+.leader-section{
+    display: flex;
+    flex-direction:row;
+}
+
+.image
+{
+    margin: 40px;
+}
+
+.usersdata
+{
+ margin: 20px;
+}
+
+h1{
+    margin-left: 350px;
+    font-size: 40px;
+}
+
+
+#lb{
+    color:white;
+    font-size: larger;
+    margin: 50px 250px;
+}
+
+#details
+{
+    color: white;
+    font-size: larger;
+}
+
+#details
+{
+    color:white;
+    font-size: large;
+    margin: 100px 200px;
+}
+
+.backbtn
+{
+  color:black;
+  background-color: white;
+  font-size: xx-large;
+  margin: 10px;
+}

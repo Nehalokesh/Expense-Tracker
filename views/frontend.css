@@ -46,10 +46,9 @@ select{
 
 button{
     width:80px;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: white;
     border:5px solid black;
-    
 }
 
 .userlist{
@@ -57,12 +56,15 @@ button{
 }
 #rzp-button1
 {
-   position: fixed; 
-   bottom: 10px;
-   left: 10px;
-   background: none;
-   font-size: xx-large;
-   color: #4C0033;
+    position: fixed;
+    height: 50px;
+    width: 200px;
+    bottom: 10px;
+    left: 10px;
+    background: none;
+    font-size: large;
+    color: black;
+    background-color: white;
 }
 
 #logout{
@@ -70,5 +72,37 @@ button{
     top:20px;
     right: 50px;
     background: none;
-    font-size: x-large;
+    font-size: large;
+    background-color: white;
+}
+
+#body.premium
+{
+    background-image: url(https://images.unsplash.com/photo-1546536582-cdabb1daf509?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzV8fHN1bW1lcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60);
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-position: center;
+     color: black;
+
+}
+
+#logout.premium{
+    color: black;
+}
+
+
+#Addbtn.premium
+{
+    background-color: black;
+    color: azure;
+
+}
+#leaderboard{
+    width:200px;
+    height: 40px;
+    margin: 0px 115px;
+    border-radius: 10px;
+    border-color: black;
+    background-color: white;
 }

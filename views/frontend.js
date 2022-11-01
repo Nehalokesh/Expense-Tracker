@@ -17,7 +17,7 @@ btn.addEventListener('click',(e)=>{
            }
            console.log(obj);
            const token = localStorage.getItem('token')
-             axios.post("http://localhost:3000/details",obj,{headers:{"Authorization":token}})
+             axios.post("http://localhost:4000/details",obj,{headers:{"Authorization":token}})
              .then((response)=>{
                 showListofRegisteredUser(response.data.data)
                 console.log(response.data);
@@ -47,9 +47,26 @@ function showListofRegisteredUser(user){
 
         e.preventDefault();
         const token = localStorage.getItem('token')
-            axios.get("http://localhost:3000/userinfo",{headers:{"Authorization":token}})
+            axios.get("http://localhost:4000/userinfo",{headers:{"Authorization":token}})
             .then((response)=>{
                 console.log(response)
+                if(response.data.user.premiumuser == true)
+            {
+                document.getElementById('body').classList.add('premium')
+             document.getElementById('logout').classList.add('premium')
+             document.getElementById('Addbtn').classList.add('premium')
+             document.getElementById('rzp-button1').classList.add('premium')
+             document.body.innerHTML+="<a href='leaderboard.html'>leaderboard</a>" 
+             document.getElementById('rzp-button1').remove()
+             const logout = document.getElementById('logout')
+            logout.addEventListener('click',()=>{
+             if(confirm('ARE U SURE'))
+             {
+             window.location = 'login.html'
+           }
+ })
+
+            }
                 for(let i=0;i<response.data.response.length;i++){
                     let expense =response.data.response[i].expense
                     let description =response.data.response[i].description
@@ -77,7 +94,7 @@ function showListofRegisteredUser(user){
     function deleteUser(userid)
     {
         const token = localStorage.getItem('token')
-        axios.delete(`http://localhost:3000/delete/${userid}`,{headers:{"Authorization":token}})
+        axios.delete(`http://localhost:4000/delete/${userid}`,{headers:{"Authorization":token}})
 
         .then((response)=> 
 
@@ -108,10 +125,17 @@ const logout = document.getElementById('logout')
         window.location = 'login.html'
     }
  })
+ const leaderboard = document.getElementById('leaderboard')
+ leaderboard.addEventListener('click',()=>{
+    if(confirm('ARE U SURE'))
+    {
+        window.location = 'leaderboard.html'
+    }
+ })
 
  document.getElementById('rzp-button1').onclick = async function (e) {
     const token = localStorage.getItem('token')
-    const response  = await axios.get('http://localhost:3000/purchase', { headers: {"Authorization" : token} });
+    const response  = await axios.get('http://localhost:4000/purchase', { headers: {"Authorization" : token} });
     console.log(response);
     const options =
     {
@@ -121,7 +145,7 @@ const logout = document.getElementById('logout')
      "prefill": {
        "name": "Test User",
        "email": "test.user@example.com",
-       "contact": "9663332873"
+       "contact": "7349635331"
      },
      "theme": {
       "color": "#3399cc"
@@ -129,7 +153,7 @@ const logout = document.getElementById('logout')
      // This handler function will handle the success payment
      "handler": function (response) {
          console.log(response);
-         axios.post('http://localhost:3000/updatepurchase',{
+         axios.post('http://localhost:4000/updatepurchase',{
              order_id: options.order_id,
              payment_id: response.razorpay_payment_id,
          }, { headers: {"Authorization" : token} }).then(() => {
@@ -153,4 +177,4 @@ const logout = document.getElementById('logout')
   alert(response.error.metadata.order_id);
   alert(response.error.metadata.payment_id);
  });
- }
+}

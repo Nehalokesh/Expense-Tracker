@@ -8,9 +8,9 @@ const userauthenticate = require('../middleware/auth')
 
 const controller = require('../controllers/expense')
 
-const expensecontroller = require('../controllers/expense')
-
 const purchasecontroller = require('../controllers/purchase')
+
+const expensecontroller = require('../controllers/expense')
 
 router.post('/signup',usercontroller.signup)
 
@@ -29,6 +29,10 @@ router.post('/updatepurchase',userauthenticate.authenticate, purchasecontroller.
 router.get('/AllUsers',userauthenticate.authenticate,expensecontroller.getAllUsers)
 
 router.get('/AllExpense/:id',expensecontroller.getAllExpenses)
+
+router.get('/getReport',userauthenticate.authenticate,expensecontroller.getDailyExpense)
+
+router.get('/getWeeklyReport',userauthenticate.authenticate,expensecontroller.weeklyExpense)
 
 module.exports = router
 
